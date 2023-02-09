@@ -1,0 +1,38 @@
+
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django upload</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+</head>
+
+<body> <br>
+    <form method="POST" enctype="multipart/form-data" class="container">
+        {% csrf_token %}
+
+        <div class="col-md-4 mb-3 pb-1" id="pdfFile" name="pdfFile" accept=".pdf">
+            {{ form.file_upload|add_class:"form-control" }}
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+
+    </form>
+    
+    <ul class="container">
+        {% for item in get_files %}
+        <li><a href="{{ item.file_upload.url }}" download> {{ item.file_upload.name|cut:"documents/uploaded-" }} </a>
+        </li>
+        {% endfor %}
+    </ul><br>
+
+</body>
+
+</html>
+{% endblock %}

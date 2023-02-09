@@ -1,0 +1,136 @@
+{% block content %}
+{% load static %}
+
+<html>
+
+<head>
+  <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/theme-1.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+</head>
+
+<body>
+
+  {% if messages %}
+  {% for message in messages %}
+  <div class="container-fluid p-0">
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="True">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+  </div>
+  {% endfor %}
+
+  {% endif %}
+
+
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5" style="background-color:#409cff;">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="text-align: center;">Registration Form</h3>
+              <div class="social-login col-md-12 mb-6 pb-2">
+                <div>
+                  <img class="icon" src="{% static 'img/gmail.png' %}" alt="">
+                  Gmail
+                </div>
+                <div>
+                  <img class="form-outline" src="{% static 'img/facebook.png' %}" alt="">
+                  Facebook
+                </div>
+              </div>
+              <div class="text-center line form-divider">or</div>
+              <form action="." method="POST">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+                    <div class="form-outline">
+                      <!-- <input type="username" name="username" id="username" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="username">Username</label>
+                      {{ form.username }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+                    <div class="form-outline">
+                      <!-- <input type="text" name="email" id="emailAddress" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="emailAddress">Email</label>
+                      {{ form.email }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+                    <div class="form-outline">
+                      <!-- <input type="password" name="password1" id="password1" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="address">Address</label>
+                      {{ form.address }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+                    <div class="form-outline">
+                      <!-- <input type="password" name="password1" id="password1" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="job">Job</label>
+                      {{ form.job }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+                    <div class="form-outline">
+                      <!-- <input type="password" name="password1" id="password1" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="age">Age</label>
+                      {{ form.age }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+                    <div class="form-outline">
+                      <!-- <input type="password" name="password1" id="password1" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="number">Phone Number</label>
+                      {{ form.number }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+                    <div class="form-outline">
+                      <!-- <input type="password" name="password1" id="password1" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="password1">Password</label>
+                      {{ form.password1 }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10 mb-3 pb-1">
+
+                    <div class="form-outline">
+                      <!-- <input type="password" name="password1" id="password1" class="form-control form-control-lg" /> -->
+                      <label class="form-label" for="password1">Repeat Password</label>
+                      {{ form.password2 }}
+                    </div>
+
+                  </div>
+                </div>
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" style="background-color:#007bff;" type="submit" value="Submit" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
+{% endblock %}
