@@ -1,14 +1,16 @@
-{% block content %}
+{% extends 'base.html' %}
 {% load static %}
+{% block title %}
+  Register
+{% endblock %}
 
-<html>
 
-<head>
-  <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/theme-1.css' %}">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% block links %}
+  <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+{% endblock %}
 
-</head>
-
+{% block content %}
 <body>
 
   {% if messages %}
@@ -31,19 +33,19 @@
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-12 col-lg-9 col-xl-7">
           <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-            <div class="card-body p-4 p-md-5" style="background-color:#409cff;">
+            <div class="card-body p-4 p-md-5" style="background-color:snow;">
               <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="text-align: center;">Registration Form</h3>
-              <div class="social-login col-md-12 mb-6 pb-2">
-                <div>
-                  <img class="icon" src="{% static 'img/gmail.png' %}" alt="">
-                  Gmail
+              <div class=" d-flex justify-content-center">
+                <div class="col-4 container"> 
+                  <img  style="border-radius: 50%; "  class="form-outline text-center" width="80px" height="80px" src="{% static 'assets/img/gmail1.png' %}" alt="gmail">
+                <p class="text-center">Gmail</p>
                 </div>
-                <div>
-                  <img class="form-outline" src="{% static 'img/facebook.png' %}" alt="">
-                  Facebook
+                <div class="col-4 container">
+                  <img style="border-radius: 50%; object-fit: cover; "  class="form-outline" width="80px" height="80px"  src="{% static 'assets/img/facebook.png' %}" alt="facebook">
+                <p>Facebook</p>
                 </div>
               </div>
-              <div class="text-center line form-divider">or</div>
+              <!-- <div class="text-center line form-divider">or</div> -->
               <form action="." method="POST">
                 {% csrf_token %}
                 <div class="row">
@@ -121,7 +123,7 @@
                   </div>
                 </div>
                 <div class="mt-4 pt-2">
-                  <input class="btn btn-primary btn-lg" style="background-color:#007bff;" type="submit" value="Submit" />
+                  <input class="btn btn-primary btn-lg" style="background-color:#007bff; font-size: 15px;" type="submit" value="Submit" />
                 </div>
               </form>
             </div>

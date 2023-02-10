@@ -3,7 +3,7 @@ from myApp.models import FileHandler
 
 class FileHandlerForm(forms.ModelForm):
 
-    file_upload = forms.FileField
+    file = forms.FileField
 
     class Meta():
         model = FileHandler

@@ -2,12 +2,17 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from myApp.models import FileHandler
 from .forms import FileHandlerForm
+from Users.models import CustomUser
 # from django.views import generic
 # from django.urls import reverse_lazy
 # from django.contrib.auth import authenticate, login
 
 def home(request):
-    context = {}
+    get_files = FileHandler.objects.prefetch_related('user').last()
+    # first_file_user = get_files.first()
+    # print("First", first_file_user.user)
+    print("Files", get_files)
+    context = {'get_files':get_files}
     return render(request, "home.html", context)
 
 class IndexView(TemplateView): 
@@ -15,7 +20,9 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        get_files = FileHandler.objects.all()
+        
+        get_files = FileHandler.objects.prefetch_related('user').all()
+        print("Files", get_files)
         context = {'form':FileHandlerForm, 'get_files':get_files}
         return context
 
@@ -34,6 +41,19 @@ class IndexView(TemplateView):
             context['form'] = form
 
         return redirect('myApp:home')
+        
+def show_files(request):
+        get_files = FileHandler.objects.prefetch_related('user').last()
+        first_file_user = get_files.first()
+        print("First", first_file_user.user)
+        print("Files", get_files)
+        context = {'get_files':get_files}
+        return render(request, "files.html", context)
+
+
+def editor(request):
+    context = {}
+    return render(request, "editor.html", context)
 
 # def register(request):
 #     # if not request.user.is_anonymous:

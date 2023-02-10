@@ -12,6 +12,7 @@ class CustomUserCreationForm(UserCreationForm):
             'name':'username',
             'id':'username',
             'type':'text',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'username',
         })
@@ -20,6 +21,7 @@ class CustomUserCreationForm(UserCreationForm):
             'name':'email',
             'id':'id="emailAddress',
             'type':'text',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'email',
         })
@@ -28,6 +30,7 @@ class CustomUserCreationForm(UserCreationForm):
             'name':'password1',
             'id':'password1',
             'type':'password',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'password',
             'minleght':'8'
@@ -37,6 +40,7 @@ class CustomUserCreationForm(UserCreationForm):
             'name':'password2',
             'id':'password2',
             'type':'password',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'password',
             'minleght':'8'
@@ -46,6 +50,7 @@ class CustomUserCreationForm(UserCreationForm):
             'name':'address',
             'id':'address',
             'type':'address',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'address',
         })
@@ -53,6 +58,7 @@ class CustomUserCreationForm(UserCreationForm):
             'required':'',
             'name':'job',
             'type':'job',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'job',
         })
@@ -60,6 +66,7 @@ class CustomUserCreationForm(UserCreationForm):
             'required':'',
             'name':'age',
             'type':'age',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'age',
         })
@@ -67,6 +74,7 @@ class CustomUserCreationForm(UserCreationForm):
             'required':'',
             'name':'number',
             'type':'number',
+            'style':'font-size:15px',
             'class':'form-control form-control-lg',
             'placeholder':'phone number',
         })

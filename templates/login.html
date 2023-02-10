@@ -1,69 +1,57 @@
-{% extends 'main.html' %}
+{% extends 'base.html' %}
 {% load static %}
+
+{% block title %}
+    Login to your account
+{% endblock %}
+
+{% block links %} 
+    <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+{% endblock %}
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="Anil z" name="author">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Shopwise is Powerful features and You Can Use The Perfect Build this Template For Any eCommerce Website. The template is built for sell Fashion Products, Shoes, Bags, Cosmetics, Clothes, Sunglasses, Furniture, Kids Products, Electronics, Stationery Products and Sporting Goods.">
-    <meta name="keywords"
-        content="ecommerce, electronics store, Fashion store, furniture store,  bootstrap 4, clean, minimal, modern, online store, responsive, retail, shopping, ecommerce store">
+<div class="container mt-5">
+    <br><br>
+    <form>{% csrf_token %}
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <!-- Email input -->
+        <div class="container">
+            <div class="row">
+                <div class="  col-xl-4 col-md-6">
+                    <div class="form-outline col-md-12 mb-4 pb-1">
+                        <label class="form-label" for="form1Example1">Email address</label>
+                        <input type="email" id="form1Example1" class="form-control" />
 
-    <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/theme-1.css' %}">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-</head>
-
-<body>
-    <div class="container">
-        <br><br>
-        <form>{% csrf_token %}
-            {% if error %}
-            <p style="color: red;">{{ error }}</p>
-            {% endif %}
-            <!-- Email input -->
-            <div class="container">
-                <div class="row">
-                    <div class="  col-xl-4 col-md-6">
-                        <div class="form-outline col-md-12 mb-4 pb-1">
-                            <label class="form-label" for="form1Example1">Email address</label>
-                            <input type="email" id="form1Example1" class="form-control" />
-
-                        </div>
-                        <!-- Password input -->
-                        <div class="form-outline  col-xl-12 mb-4 pb-1">
-                            <label class="form-label" for="form1Example2">Password</label>
-                            <input type="password" id="form1Example2" class="form-control" />
-
-                        </div>
-
-                        <!-- 2 column grid layout for inline styling -->
-                        <div class=" mb-4 gap-2 d-flex justify-content-start">
-                            <div class="col-xl-6">
-                                <!-- Checkbox -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="form1Example3"
-                                        checked />
-                                    <label class="form-check-label" for="form1Example3"> Remember me </label>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-6">
-                                <!-- Simple link -->
-                                <a href="#!">Forgot password?</a>
-                            </div>
-                        </div>
-                        <button type="submit"
-                            class="btn btn-primary btn-block form-outline col-md-12 mb-4 pb-1">Login</button>
                     </div>
+                    <!-- Password input -->
+                    <div class="form-outline  col-xl-12 mb-4 pb-1">
+                        <label class="form-label" for="form1Example2">Password</label>
+                        <input type="password" id="form1Example2" class="form-control" />
+
+                    </div>
+
+                    <!-- 2 column grid layout for inline styling -->
+                    <div class=" mb-4 gap-2 d-flex justify-content-start">
+                        <div class="col-xl-6">
+                            <!-- Checkbox -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                                <label class="form-check-label" for="form1Example3"> Remember me </label>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6">
+                            <!-- Simple link -->
+                            <a href="#!">Forgot password?</a>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="btn btn-primary btn-block form-outline col-md-12 mb-4 pb-1">Login</button>
                 </div>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+        </div>
+    </form>
+</div>
 {% endblock %}

@@ -3,7 +3,9 @@ from django.db import models
 from .managers import CustomUserManager
 
 
+
 class CustomUser(AbstractUser):
+    username = models.CharField(max_length=200, unique=True)
     address = models.CharField(max_length=200)
     number = models.CharField(max_length=200)
     email = models.EmailField(unique=True)
@@ -12,8 +14,8 @@ class CustomUser(AbstractUser):
 
     objects = CustomUserManager()
 
-    REQUIRED_FIELDS = []
-    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['email']
+    USERNAME_FIELD = 'username'
 
-    def __str__(self) -> str:
-        return self.email
+    def __str__(self):
+        return self.username
