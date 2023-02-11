@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Article
+{% endblock %}
+
+{% block links %}
+  <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+{% endblock %}
+{% block content %} <br><br><br>
+<form action=".">
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="article" name="article" id="article" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Article name</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="authors" name="authors" id="authors" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Authors</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="journal" name="journal" id="journal" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Journal name</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="data" name="data" id="data" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Publication date</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="chapter" name="chapter" id="chapter" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Chapter</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="number" name="number" id="number" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Article number</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="page" name="page" id="page" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Pages</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

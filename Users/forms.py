@@ -60,7 +60,7 @@ class CustomUserCreationForm(UserCreationForm):
             'type':'job',
             'style':'font-size:15px',
             'class':'form-control form-control-lg',
-            'placeholder':'job',
+            'placeholder':'activity',
         })
         self.fields["age"].widget.attrs.update({
             'required':'',

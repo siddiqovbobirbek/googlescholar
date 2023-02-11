@@ -55,6 +55,26 @@ def editor(request):
     context = {}
     return render(request, "editor.html", context)
 
+
+def book(request):
+    context = {}
+    return render(request, "book.html", context)
+
+
+def dgu(request):
+    context = {}
+    return render(request, "dgu.html", context)
+
+
+def dissertation(request):
+    context = {}
+    return render(request, "dissertatsiya.html", context)
+
+
+def maqola(request):
+    context = {}
+    return render(request, "maqola.html", context)
+
 # def register(request):
 #     # if not request.user.is_anonymous:
 #     #     return redirect("/")

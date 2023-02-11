@@ -12,25 +12,23 @@ class SignUpView(CreateView):
 
 
 def register(request):
-    # if not request.user.is_anonymous:
-    #     return redirect("/")
-
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get("username")
+            email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
             form.save()
-            new_user = authenticate(username=username, password=password)
+            new_user = authenticate(username=username, email=email, password=password)
             if new_user is not None:
                 login(request, new_user)
                 return redirect("register")
-
-    form = CustomUserCreationForm()
-    
-    context = {
-        "form":form
-    }
+    else:
+        form = CustomUserCreationForm()
+        
+        context = {
+            "form":form
+        }
     return render(request, "register.html", context)
 
 def login(request):

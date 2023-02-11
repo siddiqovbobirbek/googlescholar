@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Users',
     'myApp',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,5 @@ LOGOUT_REDIRECT_URL = 'home'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "Users.CustomUser"
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
+

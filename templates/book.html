@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Book
+{% endblock %}
+
+{% block links %}
+<link id="theme-style" rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+{% endblock %}
+
+{% block content %} <br><br><br>
+<form action="." >
+    <div class="container" style="font-size:15px">
+        <div class="row" style="font-size:15px">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="bookName" id="name" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Book name</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="authors" name="authors" id="authors" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Authors</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="year" name="year" id="year" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Year of publication</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="font-size:15px">
+        <div class="row">
+            <div class="col-md-10 mb-3 pb-1">
+                <div class="form-outline">
+                    <input type="publisher" name="publisher" id="publisher" class="form-control form-control-lg" />
+                    <label class="form-label" for="username">Publisher name</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

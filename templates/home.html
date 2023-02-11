@@ -17,10 +17,11 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Nima yuklamoqchisiz?
             </a>
-            <ul class="dropdown-menu" style="background-color:rgb(52, 153, 255);">
-                <li><a class="dropdown-item" href="{% url 'myApp:upload' %}">DGU</a></li>
-                <li><a class="dropdown-item" href="{% url 'myApp:upload' %}">Maqola</a></li>
-                <li><a class="dropdown-item" href="{% url 'myApp:upload' %}">Kitob</a></li>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'myApp:dgu' %}">DGU</a></li>
+                <li><a class="dropdown-item" href="{% url 'myApp:maqola' %}">Maqola</a></li>
+                <li><a class="dropdown-item" href="{% url 'myApp:book' %}">Kitob</a></li>
+                <li><a class="dropdown-item" href="{% url 'myApp:dissertation' %}">Dissertatsiya</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
